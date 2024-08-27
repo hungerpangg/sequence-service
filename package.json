@@ -1,0 +1,52 @@
+{
+	"name": "sequence-admin-service",
+	"version": "1.0.0",
+	"description": "service server for sequence-admin",
+	"main": "index.js",
+	"scripts": {
+		"start": "node ./dist/src",
+		"dev": "nodemon -q -e ts -w ./src -x ts-node ./src/index.ts | pino-pretty",
+		"test": "jest --coverage --runInBand --forceExit",
+		"migrate": "node-pg-migrate -m ./src/migrations -j sql up",
+		"migrate:create": "node-pg-migrate -m ./src/migrations -j sql create"
+	},
+	"author": "Pang Ka Wai",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^1.7.2",
+		"bcrypt": "^5.1.1",
+		"body-parser": "^1.20.2",
+		"connect-pg-simple": "^9.0.1",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
+		"express": "^4.19.2",
+		"express-session": "^1.18.0",
+		"helmet": "^7.1.0",
+		"http-status-codes": "^2.3.0",
+		"joi": "^17.13.3",
+		"jwt-decode": "^4.0.0",
+		"node-pg-migrate": "^7.6.0",
+		"pg": "^8.12.0",
+		"pg-protocol": "^1.6.1",
+		"sql-template-strings": "^2.2.2"
+	},
+	"devDependencies": {
+		"@types/bcrypt": "^5.0.2",
+		"@types/connect-pg-simple": "^7.0.3",
+		"@types/cors": "^2.8.17",
+		"@types/dotenv": "^8.2.0",
+		"@types/express": "^4.17.21",
+		"@types/express-session": "^1.18.0",
+		"@types/jest": "^29.5.12",
+		"@types/node": "^22.0.0",
+		"@types/pg": "^8.11.6",
+		"eslint": "^9.8.0",
+		"jest": "^29.7.0",
+		"nodemon": "^3.1.4",
+		"pino-pretty": "^11.2.2",
+		"prettier": "^3.3.3",
+		"ts-jest": "^29.2.3",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.5.4"
+	}
+}
